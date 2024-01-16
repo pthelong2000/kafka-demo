@@ -13,12 +13,6 @@ spring:
     show-sql: true
     database-platform: org.hibernate.dialect.MySQL8Dialect
 
-  application:
-    name: CHATS-SERVICE
-
-  config:
-    import: optional:configserver:http://localhost:9296
-
   kafka:
     bootstrap-servers: localhost:9092
     admin:
@@ -28,7 +22,8 @@ spring:
       group-id: group_id
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonSerializer
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       properties:
         spring.json.trusted.packages: "com.kafka.kafkademo"
 
