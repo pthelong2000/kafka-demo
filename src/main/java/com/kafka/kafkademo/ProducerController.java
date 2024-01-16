@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class ProducerController {
 
-    private final KafkaTemplate<String, Data> kafkaTemplate;
+    private final KafkaTemplate<String, DataRequest> kafkaTemplate;
 
     @PostMapping("/api/send")
-    public void sendMessage(@RequestBody Data data) {
-        kafkaTemplate.send("send", data);
+    public void sendMessage(@RequestBody DataRequest data) {
+        kafkaTemplate.send("send", "1", data);
     }
 }
