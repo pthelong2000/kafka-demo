@@ -36,11 +36,4 @@ public class KafkaStreamsConfig {
 
         return new KafkaStreamsConfiguration(props);
     }
-
-//    @Bean
-//    public Serde<Data> yourJsonSerde() {
-//        JsonSerializer<Data> jsonSerializer = new JsonSerializer<>();
-//        JsonDeserializer<Data> jsonDeserializer = new JsonDeserializer<>(Data.class);
-//        return new JsonSerde<>(jsonSerializer, jsonDeserializer);
-//    }
 }
